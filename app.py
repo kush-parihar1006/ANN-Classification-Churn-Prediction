@@ -65,4 +65,5 @@ if prediction_prob >0.5:
 else:
     st.write("this consumer is not likely to be churned")
     
+
     
