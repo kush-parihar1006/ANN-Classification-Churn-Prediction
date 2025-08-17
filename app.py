@@ -49,8 +49,8 @@ input_data = {
 input_df = pd.DataFrame([input_data])
 
 
-encoded_geo = one_hot_encoder.transform(input_df[[geography]])
-encoded_df = pd.DataFrame(encoded_geo,columns= one_hot_encoder.get_features_names_out(['Geography']))
+encoded_geo = one_hot_encoder.transform([geography])
+encoded_df = pd.DataFrame(encoded_geo, columns=one_hot_encoder.get_feature_names_out(['Geography'])) 
 input_df = pd.concat([input_df.reset_index(drop=True), encoded_df], axis=1)
 
 input_scaled = standard_scaler.transform(input_df)
@@ -67,4 +67,5 @@ else:
     
 
     
+
 
